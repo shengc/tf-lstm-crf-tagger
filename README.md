@@ -10,4 +10,4 @@ There are gotcha and caveat for this implementation,
 * the PyTorch implementation is kind of intuitive (depending on your familarity of CRF and Viterbi Coding). However to convert it to Tensorflow is non trivial. I had to use lots of higher order functions (map\_fn, foldl, scan) to avoid creating Tensors on the fly, given the fact sequence data is inherently undeterministic in its length. As a result, one can plug in any optimizer, such as AdamOptimizer, to train the model.
 * I have not been able to implement the mini-batch version. I think it should be possible, as long as TensorFlow allows for nested higher order function. On the other hand, I think this should be much easier for PyTorch, though its implementation from the above link does not support mini batch either.
 
-The original paper discusses the benefits of adding character level embedding and dropout to improve the performance. It is interesting to explore that possiblity later.
+The original paper discusses the benefits of adding character level embedding and dropout to improve the performance. ~~It is interesting to explore that possiblity later.~~ They are also part of this implementation now.
